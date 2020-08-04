@@ -31,8 +31,8 @@ experimental_params:
     fields_expected_outgoing: 49
     fields_expected_incoming: 49
     value: null
-  lxml:
-    recurring: false
+  light:
+    recurring: true
     fields_expected_outgoing: 17
     fields_expected_incoming: 17
     value: ['4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095']
