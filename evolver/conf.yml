@@ -1,11 +1,6 @@
 ---
 # eVOLVER experimental parameter configurations
 experimental_params:
-  od_90:
-    recurring: true
-    fields_expected_outgoing: 2
-    fields_expected_incoming: 17
-    value: '100'
   od_135:
     recurring: true
     fields_expected_outgoing: 2
@@ -32,10 +27,16 @@ experimental_params:
     fields_expected_incoming: 49
     value: null
   light:
-    recurring: false
+    recurring: true
     fields_expected_outgoing: 17
     fields_expected_incoming: 17
-    value: ['4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095','4095']
+    value: ['0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0']
+  bubble:
+    recurring: true
+    fields_expected_outgoing: 2
+    fields_expected_incoming: 2
+    value: 'on'
+
 
 # eVOLVER server parameter configurations
 broadcast_timing: 20
