@@ -247,9 +247,6 @@ def run_commands():
         except (TypeError, ValueError, serial.serialutil.SerialException, EvolverSerialError) as e:
             print_exc(file = sys.stdout)
 
-    if flag:
-        #send command to arduinos to start serial comm
-
     return data
 
 def serial_communication(param, value, comm_type):
@@ -291,7 +288,7 @@ def serial_communication(param, value, comm_type):
         raise EvolverSerialError('Error: Response has incorrect address.\n\tExpected: ' + param + '\n\tFound:' + address)
     if response.find(evolver_conf['serial_end_incoming']) != len(response) - len(evolver_conf['serial_end_incoming']):
         raise EvolverSerialError('Error: Response did not have valid serial communication termination string!\n\tExpected: ' +  evolver_conf['serial_end_incoming'] + '\n\tFound: ' + response[len(response) - 3:])
-    if 
+    
     # Remove the address and ending from the response string and convert to a list
     returned_data = response[len(param):len(response) - len(evolver_conf['serial_end_incoming']) - 1].split(',')
 
@@ -342,9 +339,10 @@ async def broadcast(commands_in_queue):
     broadcast_data = {}
     clear_broadcast()
     if not commands_in_queue:
-        # command_queue.append({'param': 'bubble', 'value': 'off', 'type':IMMEDIATE})
-        # command_queue.append({'param': 'light', 'value': ['0']*16, 'type':IMMEDIATE})
-        # run_commands()
+        command_queue.append({'param': 'bubble', 'value': 'off', 'type':IMMEDIATE})
+        command_queue.append({'param': 'light', 'value': ['0']*16, 'type':IMMEDIATE})
+        run_commands()
+        time.sleep(5) # so that the bubbling and light have time to turn off
         for param, config in evolver_conf['experimental_params'].items():
             if config['recurring']:
                 command_queue.append({'param': param, 'value': config['value'], 'type':RECURRING})

@@ -39,7 +39,7 @@ experimental_params:
 
 
 # eVOLVER server parameter configurations
-broadcast_timing: 20
+broadcast_timing: 40
 num_sleeves: 16
 port: 8081
 
