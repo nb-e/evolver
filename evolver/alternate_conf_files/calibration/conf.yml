@@ -6,14 +6,6 @@ experimental_params:
     fields_expected_outgoing: 2
     fields_expected_incoming: 17
     value: '1000'
-    pre:
-    - param: 'od_led'
-      value: 'values'
-    - param: 'wait'
-      value: 15
-    post:
-    - param: 'od_led'
-      value: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
   lux: 
     fields_expected_incoming: 33
     fields_expected_outgoing: 2
@@ -51,7 +43,7 @@ experimental_params:
     value: ['4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095']
 
 # eVOLVER server parameter configurations
-broadcast_timing: 90
+broadcast_timing: 10
 num_sleeves: 16
 port: 8081
 
