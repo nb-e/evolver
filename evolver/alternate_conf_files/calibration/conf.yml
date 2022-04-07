@@ -6,16 +6,6 @@ experimental_params:
     fields_expected_outgoing: 2
     fields_expected_incoming: 17
     value: '1000'
-  lux: 
-    fields_expected_incoming: 33
-    fields_expected_outgoing: 2
-    recurring: true
-    value: '4'
-  pres:
-    fields_expected_incoming: 9
-    fields_expected_outgoing: 9
-    recurring: true
-    value: ['0', '0', '0', '0', '0', '0', '0', '0']
   od_led:
     recurring: true
     fields_expected_outgoing: 17
@@ -36,11 +26,17 @@ experimental_params:
     fields_expected_outgoing: 49
     fields_expected_incoming: 49
     value: null
-  lxml:
-    recurring: false
-    fields_expected_outgoing: 17
+  bubble:
+    fields_expected_incoming: 4
+    fields_expected_outgoing: 4
+    recurring: true
+    value: ['off',4095,1000]
+  light:
     fields_expected_incoming: 17
-    value: ['4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095']
+    fields_expected_outgoing: 17
+    recurring: true
+    value: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
+      '0', '0', '0']
 
 # eVOLVER server parameter configurations
 broadcast_timing: 10

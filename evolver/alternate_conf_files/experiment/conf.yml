@@ -1,11 +1,29 @@
 ---
 # eVOLVER experimental parameter configurations
 experimental_params:
+  bubble:
+    fields_expected_incoming: 4
+    fields_expected_outgoing: 4
+    recurring: true
+    value: ['on', 4095, 1000]
+  light:
+    fields_expected_incoming: 17
+    fields_expected_outgoing: 17
+    recurring: true
+    value: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
   od_90:
     recurring: true
     fields_expected_outgoing: 2
     fields_expected_incoming: 17
     value: '1000'
+    pre:
+    - param: 'od_led'
+      value: 'values'
+    - param: 'wait'
+      value: 15
+    post:
+    - param: 'od_led'
+      value: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
   od_led:
     recurring: true
     fields_expected_outgoing: 17
@@ -26,20 +44,9 @@ experimental_params:
     fields_expected_outgoing: 49
     fields_expected_incoming: 49
     value: null
-  bubble:
-    fields_expected_incoming: 4
-    fields_expected_outgoing: 4
-    recurring: true
-    value: ['off',4095,1000]
-  light:
-    fields_expected_incoming: 17
-    fields_expected_outgoing: 17
-    recurring: true
-    value: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
-      '0', '0', '0']
 
 # eVOLVER server parameter configurations
-broadcast_timing: 10
+broadcast_timing: 120
 num_sleeves: 16
 port: 8081
 
